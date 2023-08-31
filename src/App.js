@@ -5,7 +5,7 @@ import Ads from "./components/adsComp/Ads";
 
 function App() {
     return (
-        <main style={style.main_Cont}>
+        <div style={style.frame_Cont}>
             <Nav />
             <Header />
             <Ads />
@@ -15,18 +15,30 @@ function App() {
                 {/* <Route path='Friends' element={<Friends />} /> */}
                 {/* <Route path='Profile' element={<Profile />} /> */}
             </Routes>
-        </main>
+
+            <main style={style.main_Cont}>Main Content</main>
+        </div>
     );
 }
 
 export default App;
 
 const style = {
-    main_Cont: {
+    frame_Cont: {
         display: "flex",
-        border: ".1rem solid red",
+        // border: ".1rem solid red",
         flexDirection: "row",
         height: "100%",
         width: "100%",
+    },
+
+    main_Cont: {
+        display: "inline-block",
+        position: "absolute",
+        border: ".1rem solid violet",
+        height: "50.2rem",
+        width: "66.7%",
+        marginTop: "10.1rem",
+        marginLeft: "17.7rem",
     },
 };

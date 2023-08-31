@@ -9,7 +9,7 @@
 
 const Ads = () => {
     return (
-        <section style={style.ads_Cont}>
+        <aside style={style.ads_Cont}>
             <section style={style.adCard}>
                 {/* <img src={imgCard_1} alt='' /> */}
                 <h1>Title 1</h1>
@@ -45,7 +45,7 @@ const Ads = () => {
                     Link 3
                 </a>
             </section>
-        </section>
+        </aside>
     );
 };
 
@@ -55,7 +55,7 @@ const style = {
     ads_Cont: {
         display: "",
         flexDirection: "column",
-        border: ".1rem solid yellow",
+        // border: ".1rem solid teal",
         backgroundColor: "#0005",
         width: "20rem",
         height: "100vh",
