@@ -1,9 +1,9 @@
 import imgCard_1 from "../../images/ads/api.jpg";
-//
+
 //
 //
 
-const AdCard1 = (Title) => {
+const AdCard1 = (Title, props) => {
     return (
         <section style={style.adCard}>
             <img src={imgCard_1} alt='Ad' style={style.imgCard_1} />
@@ -19,6 +19,8 @@ const AdCard1 = (Title) => {
         </section>
     );
 };
+
+// {`images/${props.image}`}
 
 export default AdCard1;
 

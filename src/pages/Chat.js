@@ -1,16 +1,20 @@
-import React from "react";
+import React, { Component } from "react";
 //
 //
 //
 //
 
-const Chat = () => {
-    return (
-        <main style={style.main_Cont}>
-            <h1>Chat Page</h1>
-        </main>
-    );
-};
+class Chat extends Component {
+    state = {};
+
+    render() {
+        return (
+            <main style={style.main_Cont}>
+                <h1>Chat Page</h1>
+            </main>
+        );
+    }
+}
 
 export default Chat;
 
