@@ -4,26 +4,25 @@ import SiteName from "../nameComp/SiteName";
 
 const Nav = () => {
     return (
-        <nav style={style.navCont}>
+        <nav style={style.nav_Cont}>
             <section>
                 <SiteName siteName='Chat Box' />
             </section>
 
-            <section style={style.navBtnCont}>
-                <Link to='/' style={style.navLink}>
+            <section style={style.navBtn_Cont}>
+                <Link to='/Home' style={style.navLinks}>
                     Home
                 </Link>
-                <Link to='/' style={style.navLink}>
+                <Link to='/Chat' style={style.navLinks}>
                     Chat
                 </Link>
-                <Link to='/' style={style.navLink}>
+                <Link to='/Friends' style={style.navLinks}>
                     Friends
                 </Link>
-                <Link to='/' style={style.navLink}>
+                <Link to='/Profile' style={style.navLinks}>
                     Profile
                 </Link>
             </section>
-            <section style={style.quickLinks}></section>
         </nav>
     );
 };
@@ -31,32 +30,41 @@ const Nav = () => {
 export default Nav;
 
 const style = {
-    navCont: {
+    nav_Cont: {
         display: "flex",
-        border: ".1rem solid black",
+        // border: ".1rem solid black",
         flexDirection: "column",
         width: "20rem",
         height: "100vh",
         backgroundColor: "#0005",
+        paddingRight: ".5rem",
     },
 
-    navBtnCont: {
+    navBtn_Cont: {
         // display: "",
-        border: ".1rem solid green",
-        borderRadius: ".3rem",
+        // border: ".1rem solid white",
+        borderTopRightRadius: ".3rem",
+        borderBottomRightRadius: ".3rem",
         width: "10rem",
         height: "30rem",
         marginTop: "3rem",
+        padding: ".5rem",
+        boxShadow: "1px 1px 10px white",
     },
 
-    quickLinks: {
-        // display: "",
-        border: ".1rem solid yellow",
+    navLinks: {
+        display: "block",
+        border: ".1rem inset white",
         borderRadius: ".3rem",
-
-        width: "18rem",
-        height: "10rem",
-        margin: "0 auto",
-        marginTop: "3rem",
+        marginTop: "4rem",
+        textAlign: "center",
+        color: "#0005",
+        backgroundColor: "black",
+        fontSize: "28px",
+        fontWeight: "bolder",
+        textShadow: "2px 1px 1px white",
+        padding: ".1rem",
+        textDecoration: "none",
+        boxShadow: "1px 1px 5px white",
     },
 };
