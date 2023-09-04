@@ -2,6 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import Nav from "../src/components/navComp/Nav";
 import Header from "./components/headerComp/Header";
 import Ads from "./components/adsComp/Ads";
+import Chat from "./pages/Chat";
 
 function App() {
     return (
@@ -9,14 +10,16 @@ function App() {
             <Nav />
             <Header />
             <Ads />
-            <Routes>
-                {/* <Route path='/' element={<Home />} /> */}
-                {/* <Route path='Chat' element={<Chat />} /> */}
-                {/* <Route path='Friends' element={<Friends />} /> */}
-                {/* <Route path='Profile' element={<Profile />} /> */}
-            </Routes>
 
-            <main style={style.main_Cont}>Main Content</main>
+            <main style={style.main_Cont}>
+                {/* Main Content */}
+                <Routes>
+                    {/* <Route path='/' element={<Chat />} /> */}
+                    <Route path='/Chat' element={<Chat />} />
+                    {/* <Route path='Friends' element={<Friends />} /> */}
+                    {/* <Route path='Profile' element={<Profile />} /> */}
+                </Routes>
+            </main>
         </div>
     );
 }
@@ -35,10 +38,10 @@ const style = {
     main_Cont: {
         display: "inline-block",
         position: "absolute",
-        border: ".1rem solid violet",
+        // border: ".1rem solid violet",
         height: "50.2rem",
-        width: "66.7%",
+        width: "66.5%",
         marginTop: "10.1rem",
-        marginLeft: "17.7rem",
+        marginLeft: "18.1rem",
     },
 };
