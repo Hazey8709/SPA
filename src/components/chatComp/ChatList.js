@@ -60,13 +60,14 @@ const style = {
     },
 
     Details: {
-        border: ".2rem inset black",
+        // border: ".2rem inset black",
         borderRadius: ".3rem",
         width: "30rem",
         height: "10rem",
         margin: "0 auto",
         textIndent: "1rem",
         textWrap: "wrap",
+        boxShadow: "1px 1px 10px black",
     },
 
     btn_Cont: {
