@@ -7,16 +7,78 @@ import DeleteBtn from "../buttonsComp/DeleteBtn";
 
 const ChatList = (props) => {
     return (
-        <article key={props.id} style={style.message_Cont}>
-            <img src={props.val.Img} style={style.Img} alt={props.val.cAlt} />
-            <h1 style={style.Name}>{props.val.Name}</h1>
-            <h3 style={style.Status}>{props.val.Status}</h3>
+        <article key={props.index} style={style.message_Cont}>
+            {props.index === props.editIndex ? ( // Check if the message is being edited
+                <div>
+                    <input
+                        type='text'
+                        value={
+                            props.editedValues.Name !== undefined
+                                ? props.editedValues.Name
+                                : ""
+                        }
+                        onChange={(e) =>
+                            props.editMessage(
+                                props.index,
+                                "Name",
+                                e.target.value
+                            )
+                        }
+                    />
 
-            <p style={style.Details}>{props.val.Details}</p>
-            <div style={style.btn_Cont}>
-                <EditBtn onClick={props.editItem} />
-                <DeleteBtn onClick={props.delItem} />
-            </div>
+                    <input
+                        type='text'
+                        value={
+                            props.editedValues.Status !== undefined
+                                ? props.editedValues.Status
+                                : ""
+                        }
+                        onChange={(e) =>
+                            props.editMessage(
+                                props.index,
+                                "Status",
+                                e.target.value
+                            )
+                        }
+                    />
+                    <input
+                        type='text'
+                        value={
+                            props.editedValues.Details !== undefined
+                                ? props.editedValues.Details
+                                : ""
+                        }
+                        onChange={(e) =>
+                            props.editMessage(
+                                props.index,
+                                "Details",
+                                e.target.value
+                            )
+                        }
+                    />
+
+                    <button onClick={() => props.confirmEdit(props.index)}>
+                        Confirm
+                    </button>
+
+                    <button onClick={() => props.cancelEdit()}>Cancel</button>
+                </div>
+            ) : (
+                <div>
+                    <img
+                        src={props.val.Img}
+                        style={style.Img}
+                        alt={props.val.cAlt}
+                    />
+                    <h1 style={style.Name}>{props.val.Name}</h1>
+                    <h3 style={style.Status}>{props.val.Status}</h3>
+                    <p style={style.Details}>{props.val.Details}</p>
+                    <div style={style.btn_Cont}>
+                        <EditBtn onClick={() => props.editItem(props.index)} />
+                        <DeleteBtn onClick={props.delItem} />
+                    </div>
+                </div>
+            )}
         </article>
     );
 };
