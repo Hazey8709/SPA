@@ -1,6 +1,7 @@
-import Avatar from "../../images/guyAvatar.jpg";
 import { Link } from "react-router-dom";
 import Links from "../linksComp/Links";
+//* Avatar
+import Avatar from "../../images/avatars/guyAvatar.jpg";
 //
 //
 //
@@ -9,8 +10,15 @@ const Header = () => {
     return (
         <header style={style.header_Cont}>
             <Link to='Profile'>
-                <img src={Avatar} alt='Avatar' style={style.avatar} />
-                <h2 style={style.avatarName}>Ray Zip</h2>
+                <img
+                    src={Avatar}
+                    alt='Avatar'
+                    title='Avatar'
+                    style={style.avatar}
+                />
+                <h2 title='User Name' style={style.avatarName}>
+                    Ray Zip
+                </h2>
             </Link>
             <section style={style.quickLinks}>
                 <Links />

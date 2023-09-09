@@ -6,7 +6,7 @@ import { FaEdit } from "react-icons/fa";
 
 const EditBtn = (props) => {
     return (
-        <button onClick={props.onClick} style={style.editBtn}>
+        <button onClick={props.onClick} title='Edit Post' style={style.editBtn}>
             <FaEdit />
         </button>
     );

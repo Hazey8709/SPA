@@ -7,7 +7,11 @@ import { FaTrash } from "react-icons/fa";
 
 const DeleteBtn = (props) => {
     return (
-        <button onClick={props.onClick} style={style.delBtn}>
+        <button
+            onClick={props.onClick}
+            title='Delete Post'
+            style={style.delBtn}
+        >
             <FaTrash style={style.Fatrash} />
         </button>
     );

@@ -1,5 +1,7 @@
 import EditBtn from "../buttonsComp/EditBtn";
 import DeleteBtn from "../buttonsComp/DeleteBtn";
+import ConfirmEditBtn from "../buttonsComp/ConfirmEditBtn";
+import CancelEditBtn from "../buttonsComp/CancelEditBtn";
 //
 //
 //
@@ -12,6 +14,7 @@ const ChatList = (props) => {
                 <div>
                     <input
                         type='text'
+                        style={style.editName}
                         value={
                             props.editedValues.Name !== undefined
                                 ? props.editedValues.Name
@@ -28,6 +31,7 @@ const ChatList = (props) => {
 
                     <input
                         type='text'
+                        style={style.editStatus}
                         value={
                             props.editedValues.Status !== undefined
                                 ? props.editedValues.Status
@@ -41,8 +45,9 @@ const ChatList = (props) => {
                             )
                         }
                     />
-                    <input
+                    <textarea
                         type='text'
+                        style={style.editDetails}
                         value={
                             props.editedValues.Details !== undefined
                                 ? props.editedValues.Details
@@ -57,18 +62,20 @@ const ChatList = (props) => {
                         }
                     />
 
-                    <button onClick={() => props.confirmEdit(props.index)}>
-                        Confirm
-                    </button>
+                    <div style={style.editableBtns_Cont}>
+                        <ConfirmEditBtn
+                            onClick={() => props.confirmEdit(props.index)}
+                        />
 
-                    <button onClick={() => props.cancelEdit()}>Cancel</button>
+                        <CancelEditBtn onClick={() => props.cancelEdit()} />
+                    </div>
                 </div>
             ) : (
                 <div>
                     <img
-                        src={props.val.Img}
-                        style={style.Img}
-                        alt={props.val.cAlt}
+                        src={props.val.img}
+                        style={style.imgStyle}
+                        alt={props.val.alt}
                     />
                     <h1 style={style.Name}>{props.val.Name}</h1>
                     <h3 style={style.Status}>{props.val.Status}</h3>
@@ -98,8 +105,8 @@ const style = {
         boxShadow: "1px 1px 10px white",
     },
 
-    Img: {
-        border: ".2rem solid black",
+    imgStyle: {
+        // border: ".2rem solid black",
         borderRadius: "3rem",
         width: "8rem",
         height: "8rem",
@@ -138,6 +145,37 @@ const style = {
         borderRadius: ".3rem",
         width: "30rem",
         margin: "0 auto",
+        marginTop: "1rem",
+    },
+
+    editName: {
+        border: ".1rem solid red",
+        borderRadius: ".3rem",
+        marginTop: "10rem",
+        marginLeft: ".2rem",
+    },
+
+    editStatus: {
+        display: "block",
+        border: ".1rem solid red",
+        borderRadius: ".3rem",
+        marginTop: "2rem",
+        marginLeft: "2rem",
+    },
+
+    editDetails: {
+        display: "block",
+        border: ".1rem solid red",
+        borderRadius: ".3rem",
+        width: "30rem",
+        height: "10rem",
+        margin: "0 auto",
+        marginTop: "2rem",
+    },
+
+    editableBtns_Cont: {
+        // border: ".1rem solid green",
+        marginLeft: "2.5rem",
         marginTop: "1rem",
     },
 };

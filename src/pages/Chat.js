@@ -1,7 +1,11 @@
-import React, { Component } from "react";
+import { Component } from "react";
 import ChatForm from "../components/formComp/ChatForm";
 import ChatList from "../components/chatComp/ChatList";
 
+//* Images for sList
+import card1_img from "../images/avatars/girlAvatar.png";
+import card2_img from "../images/avatars/guyAvatar.jpg";
+import card3_img from "../images/avatars/monkeyAvatar.png";
 //
 //
 //
@@ -14,21 +18,28 @@ class Chat extends Component {
                 Name: "Debra Gens",
                 Status: "Feeling sick..",
                 Details: "Woke up with a cold yikes!",
+                img: card1_img,
+                alt: "Avatar",
             },
             {
                 Name: "Jane Doe",
                 Status: "lost....",
                 Details: "From the tv show ?",
+                img: card2_img,
+                alt: "Avatar",
             },
             {
                 Name: "Joker Tile",
                 Status: "speeding",
                 Details: "doing 100 on the highway, get out of my way",
+                img: card3_img,
+                alt: "Avatar",
             },
         ],
         editIndex: -1, // Initialize it with -1 to indicate no message is being edited
         editedValues: {}, // Empty editing values
-        messageCount: 0, // message counter
+        messageCount: 3, // message counter
+        avatar: card1_img,
     };
 
     componentDidMount() {
@@ -70,6 +81,7 @@ class Chat extends Component {
             Name: this.state.Name,
             Status: this.state.Status,
             Details: this.state.Details,
+            img: this.state.avatar, // avatar set URL
         };
 
         // check if exists
@@ -102,7 +114,8 @@ class Chat extends Component {
         return (
             item1.Name === item2.Name &&
             item1.Status === item2.Status &&
-            item1.Details === item2.Details
+            item1.Details === item2.Details &&
+            item1.img === item2.img
         );
     }
 
@@ -180,12 +193,15 @@ class Chat extends Component {
 
         return (
             <main style={style.main_Cont}>
-                <ChatForm getInput={this.getInput} addItem={this.addItem} />
+                <ChatForm
+                    getInput={this.getInput}
+                    addItem={this.addItem}
+                    avatar={this.state.avatar}
+                />
                 <div style={style.chatBox_Cont}>{comList}</div>
                 <div style={style.messageCounter_Cont}>
                     Number of Messages: {this.state.messageCount}
                 </div>{" "}
-                {/* display message counter*/}
             </main>
         );
     }
