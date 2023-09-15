@@ -1,20 +1,24 @@
-import imgCard_3 from "../../images/ads/jsTitle.png";
+//
 //
 //
 //
 
-const AdCard3 = (Title) => {
+const AdCard3 = (props) => {
     return (
         <section style={style.adCard}>
-            <img src={imgCard_3} alt='Ad' style={style.imgCard_3} />
-            <h1 style={style.title}>{Title.titleCard_3}</h1>
+            <img
+                src={props.imgCard_3}
+                alt={props.alt}
+                style={style.imgCard_3}
+            />
+            <h1 style={style.title}>{props.titleCard_3}</h1>
             <a
                 href='https://github.com/Hazey8709/SPA/tree/main'
                 style={style.link}
                 target='blank'
                 rel='noreferrer'
             >
-                Link 3
+                {props.linkName}
             </a>
         </section>
     );

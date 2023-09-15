@@ -1,26 +1,26 @@
-import { FaTrash } from "react-icons/fa";
+import { FaCheck } from "react-icons/fa";
 //
 //
 //
 //
 //
 
-const DeleteBtn = (props) => {
+const CancelEditBtn = (props) => {
     return (
         <button
             onClick={props.onClick}
-            title='Delete Post'
-            style={style.delBtn}
+            title='Cancel edit '
+            style={style.cancelBtn}
         >
-            <FaTrash style={style.Fatrash} />
+            <FaCheck />
         </button>
     );
 };
 
-export default DeleteBtn;
+export default CancelEditBtn;
 
 const style = {
-    delBtn: {
+    cancelBtn: {
         border: ".2rem solid darkRed",
         borderRadius: ".3rem",
         backgroundColor: "#f5b7b1",

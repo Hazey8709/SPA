@@ -10,16 +10,16 @@ const Nav = () => {
             </section>
 
             <section style={style.navBtn_Cont}>
-                <Link to='/Home' style={style.navLinks}>
+                <Link to='/Home' title='Home Page' style={style.navLinks}>
                     Home
                 </Link>
-                <Link to='/Chat' style={style.navLinks}>
+                <Link to='/Chat' title='Chat Page' style={style.navLinks}>
                     Chat
                 </Link>
-                <Link to='/Friends' style={style.navLinks}>
+                <Link to='/Friends' title='Friends Page' style={style.navLinks}>
                     Friends
                 </Link>
-                <Link to='/Profile' style={style.navLinks}>
+                <Link to='/Profile' title='Profile Page' style={style.navLinks}>
                     Profile
                 </Link>
             </section>

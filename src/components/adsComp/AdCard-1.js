@@ -1,26 +1,27 @@
-import imgCard_1 from "../../images/ads/api.jpg";
-
 //
 //
+//
 
-const AdCard1 = (Title, props) => {
+const AdCard1 = (props) => {
     return (
         <section style={style.adCard}>
-            <img src={imgCard_1} alt='Ad' style={style.imgCard_1} />
-            <h1 style={style.title}>{Title.titleCard_1}</h1>
+            <img
+                src={props.imgCard_1}
+                alt={props.alt}
+                style={style.imgCard_1}
+            />
+            <h1 style={style.title}>{props.titleCard_1}</h1>
             <a
-                href='https://github.com/Hazey8709/SPA/tree/main'
+                href={props.hrefLink}
                 style={style.link}
                 target='blank'
                 rel='noreferrer'
             >
-                Link 1
+                {props.linkName}
             </a>
         </section>
     );
 };
-
-// {`images/${props.image}`}
 
 export default AdCard1;
 

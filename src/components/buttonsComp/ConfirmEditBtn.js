@@ -1,21 +1,26 @@
-import { FaEdit } from "react-icons/fa";
+import { FaCheck } from "react-icons/fa";
+//
 //
 //
 //
 //
 
-const EditBtn = (props) => {
+const ConfirmEditBtn = (props) => {
     return (
-        <button onClick={props.onClick} title='Edit Post' style={style.editBtn}>
-            <FaEdit />
+        <button
+            onClick={props.onClick}
+            title='Confirm Edit'
+            style={style.confirmBtn}
+        >
+            <FaCheck />
         </button>
     );
 };
 
-export default EditBtn;
+export default ConfirmEditBtn;
 
 const style = {
-    editBtn: {
+    confirmBtn: {
         border: ".2rem solid darkGreen",
         borderRadius: ".3rem",
         backgroundColor: "#c8face",
