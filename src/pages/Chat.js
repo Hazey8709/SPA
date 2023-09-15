@@ -1,11 +1,15 @@
+//* Imports
 import { Component } from "react";
 import ChatForm from "../components/formComp/ChatForm";
 import ChatList from "../components/chatComp/ChatList";
+import Counter from "../components/chatComp/Counter";
+// import MessageInfo from "../components/homeComp/MessageInfo";
 
 //* Images for sList
 import card1_img from "../images/avatars/girlAvatar.png";
 import card2_img from "../images/avatars/guyAvatar.jpg";
 import card3_img from "../images/avatars/monkeyAvatar.png";
+
 //
 //
 //
@@ -199,9 +203,11 @@ class Chat extends Component {
                     avatar={this.state.avatar}
                 />
                 <div style={style.chatBox_Cont}>{comList}</div>
-                <div style={style.messageCounter_Cont}>
+                <Counter messageCount={this.state.messageCount} />
+                {/* <div style={style.messageCounter_Cont}>
                     Number of Messages: {this.state.messageCount}
-                </div>{" "}
+                </div> */}
+                {/* <MessageInfo messageCount={this.state.messageCount} /> */}
             </main>
         );
     }
@@ -235,17 +241,16 @@ const style = {
         boxShadow: "1px 1px 10px black",
     },
 
-    messageCounter_Cont: {
-        display: "flex",
-        position: "absolute",
-        border: ".1rem solid black",
-        borderRadius: ".2rem",
-        backgroundColor: "black",
-        color: "white",
-        bottom: 0,
-        padding: ".2rem",
-        marginLeft: "45rem",
-        marginBottom: ".8rem",
-        // float: "right",
-    },
+    // messageCounter_Cont: {
+    //     display: "flex",
+    //     position: "absolute",
+    //     border: ".1rem solid black",
+    //     borderRadius: ".2rem",
+    //     backgroundColor: "black",
+    //     color: "white",
+    //     bottom: 0,
+    //     padding: ".2rem",
+    //     marginLeft: "45rem",
+    //     marginBottom: ".8rem",
+    // },
 };

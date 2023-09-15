@@ -1,4 +1,6 @@
-//
+//* Imports
+import MessageInfo from "../components/homeComp/MessageInfo";
+
 //
 //
 //
@@ -7,7 +9,7 @@
 const Home = () => {
     return (
         <main style={style.homeMain_Cont}>
-            <h1>Home Page set up </h1>
+            <MessageInfo />
         </main>
     );
 };
