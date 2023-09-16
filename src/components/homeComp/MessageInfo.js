@@ -1,18 +1,21 @@
 //* Imports
-
+//import React, { useState, useEffect } from "react";
+import { useMessageContext } from "../../context/MessageContext";
 import MessageInfoName from "../nameComp/MessageInfoName";
-// import Chat from "../../pages/Chat";
+
 //
 //
 //
 //
 
-const MessageInfo = (props) => {
+const MessageInfo = () => {
+    const { messageCount } = useMessageContext();
+
     return (
         <section style={style.message_Cont}>
             <MessageInfoName />
 
-            <div>Number of Messages: {props.messageCount}</div>
+            <div>Number of Messages: {messageCount}</div>
         </section>
     );
 };
