@@ -13,9 +13,9 @@ const MessageInfo = () => {
 
     return (
         <section style={style.message_Cont}>
-            <MessageInfoName />
+            <MessageInfoName title='Info' />
 
-            <div>Number of Messages: {messageCount}</div>
+            <div>Messages: {messageCount}</div>
         </section>
     );
 };
