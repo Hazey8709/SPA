@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState } from "react";
+import React, { createContext, useContext, useState, useEffect } from "react";
 
 const MessageContext = createContext();
 
@@ -7,7 +7,17 @@ export function useMessageContext() {
 }
 
 export function MessageProvider({ children }) {
-    const [messageCount, setMessageCount] = useState(3);
+    //
+    // Initialize messageCount from localStorage or default to 3
+    const [messageCount, setMessageCount] = useState(() => {
+        const storedMessageCount = localStorage.getItem("messageCount");
+        return storedMessageCount ? parseInt(storedMessageCount) : 3;
+    });
+
+    // Update localStorage whenever messageCount changes
+    useEffect(() => {
+        localStorage.setItem("messageCount", messageCount.toString());
+    }, [messageCount]);
 
     return (
         <MessageContext.Provider value={{ messageCount, setMessageCount }}>
