@@ -1,6 +1,13 @@
+//* Router
 import { Link } from "react-router-dom";
 
+//* Imports
 import SiteName from "../nameComp/SiteName";
+
+//
+//
+//
+//
 
 const Nav = () => {
     return (

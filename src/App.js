@@ -1,7 +1,11 @@
+//* Router
 import { Route, Routes } from "react-router-dom";
+
+//* Imports
 import Nav from "../src/components/navComp/Nav";
 import Header from "./components/headerComp/Header";
 import Ads from "./components/adsComp/Ads";
+
 //* Pages
 import Chat from "./pages/Chat";
 import Home from "./pages/Home";
