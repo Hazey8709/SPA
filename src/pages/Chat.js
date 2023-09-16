@@ -47,8 +47,8 @@ const Chat = () => {
     const [editIndex, setEditIndex] = useState(-1);
     const [editedValues, setEditedValues] = useState({});
     const { messageCount, setMessageCount } = useMessageContext();
-    //const [messageCount, setMessageCount] = useState(3);
-    const [avatar] = useState(card1_img);
+
+    const [selectedAvatar, setSelectedAvatar] = useState(card1_img);
 
     useEffect(() => {
         // Attempt to retrieve data from local storage
@@ -76,6 +76,11 @@ const Chat = () => {
         });
     };
 
+    //* Avatar
+    const handleAvatarSelection = (newAvatar) => {
+        setSelectedAvatar(newAvatar);
+    };
+
     //* Add Item Plus (Check if exist/ local storage)
     const addItem = (e) => {
         e.preventDefault();
@@ -84,7 +89,7 @@ const Chat = () => {
             Name: editedValues.Name,
             Status: editedValues.Status,
             Details: editedValues.Details,
-            img: avatar, // avatar set URL
+            img: selectedAvatar, // avatar set URL
         };
 
         // check if exists
@@ -179,7 +184,12 @@ const Chat = () => {
 
     return (
         <main style={style.main_Cont}>
-            <ChatForm getInput={getInput} addItem={addItem} avatar={avatar} />
+            <ChatForm
+                getInput={getInput}
+                addItem={addItem}
+                avatar={selectedAvatar}
+                handleAvatarSelection={handleAvatarSelection}
+            />
             <div style={style.chatBox_Cont}>{comList}</div>
 
             <div style={style.messageCounter_Cont}>
