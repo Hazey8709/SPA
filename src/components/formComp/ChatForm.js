@@ -15,11 +15,15 @@ const ChatForm = (props) => {
                 <label htmlFor='avatar' style={style.avatarFormLabel}>
                     Select Avatar:{" "}
                 </label>
+
+                {/* // selection of avatars */}
                 <select
                     name='avatar'
                     id='avatar'
                     value={props.avatar}
-                    onChange={props.getInput}
+                    onChange={(e) =>
+                        props.handleAvatarSelection(e.target.value)
+                    }
                     style={style.avatarOptions}
                     title='Choose One!'
                 >

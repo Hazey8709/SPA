@@ -4,10 +4,10 @@
 //
 //
 
-const MessageInfoName = () => {
+const MessageInfoName = (props) => {
     return (
         <div style={style.title_Cont}>
-            <h1 style={style.title}>Message Info</h1>
+            <h1 style={style.title}>{props.title}</h1>
         </div>
     );
 };
