@@ -1,70 +1,52 @@
-# Getting Started with Create React App
+# Project: SPA  (Single-Page-Application) 
+###### **Author:** _Noobie J / Hazey87_
+###### **Details:** _React, NPM, RandomUserData, LocalStorgage, React-icons, React-Router, Functonal Components & In-Component styling_
+###### **YouTube:** **[Noobie J](https://www.youtube.com/channel/UC7fWlqdyFBA1FwEVhtDMcuA)**
+###### **FaceBook:** **[Noobie J](https://www.facebook.com/profile.php?id=100077721983756)**
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Project Details:
+_This project is built with React, calling data from [RandomUserData](https://randomuser.me/) to fill in data with real looking 
+information. It utilizes  Avatar, user & profile Data from [RandomUserData](https://randomuser.me/). The Header has a Avatar & User Name that displays
+a Default name first, then once profile page is clicked it loads header with Avatar and Name so it matches Profile page. All links are active and link 
+to various things like my profile site, Youtube, FaceBook ext ext... The Avatar picture and Name tag if clicked takes you to the user Profile page. Navigation
+is on the left and ads are on the right. _ <br />
 
-## Available Scripts
+### Pages: 
+**Home:**<br />
+_The home page displays an Info box displaying how many messages you have (from Chat Board). There is a Friends Icon also that brings you to the friends page._
+**IN - Progress....** <br />
 
-In the project directory, you can run:
+**Chat:**<br />
+_The Chat page displays a form and chat/Message section (message Board). The form provides a way to post a message with your choice of Avatar with a 
+status. Messages show in the chat box/message Board, edit & delete work. Local storage is being utilized to store nessacery data as needed._ <br />
 
-### `npm start`
+**Friends:**<br />
+_The Friends page shows a list of all your friends. This part utilises [RandomUserData](https://randomuser.me/). In the friends list it shows various data
+for each person on a separate card with Avatar. If there is an error loading API Data an error will show after 1 min and while loading a loading sign shows._  <br />
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+**Profile:**
+_The Profile page will display one user (User). When profile loads the Avatar & UserName will change to display the same data as profile card does. It does 
+not store Avatar and UserName so after a refresh it will resort back to default Avatar & userName. If avatar or UserName is clicked on in the header it will
+bring the user to the Profile page._<br />
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+<hr />
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Branches
+[main:](https://github.com/Hazey8709/SPA) <br />
+[DEV:](https://github.com/Hazey8709/SPA/tree/DEV) <br />
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+**Main Branch:** <br />
+_The main branch is the master and updates/Fixes gets pushed to it._ _(Final Branch)_  <br />
+<br />
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**DEV Branch:** <br />
+_The DEV branch is where changes are made and pushed to main (branch)._ <br />
+<br />
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**Details:**
+_If you see a **"issue", "Issue", "test", "TEST"**  branch. This means if this branch is available the DEV branch becomes the last known working branch 
+until the problem/ issue/ bug is fixed and pushed to Dev then deleted._ <br />
+<hr />
