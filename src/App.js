@@ -12,26 +12,29 @@ import Home from "./pages/Home";
 import Friends from "./pages/Friends";
 import Profile from "./pages/Profile";
 //
+import { AvatarProvider } from "./context/AvatarContext";
 //
 //
 
 function App() {
     return (
         <div style={style.frame_Cont}>
-            <Nav />
-            <Header />
-            <Ads />
+            <AvatarProvider>
+                <Nav />
+                <Header />
+                <Ads />
 
-            <main style={style.main_Cont}>
-                {/* Main Content */}
-                <Routes>
-                    <Route path='/' element={<Home />} />
-                    <Route path='Home' element={<Home />} />
-                    <Route path='Chat' element={<Chat />} />
-                    <Route path='Friends' element={<Friends />} />
-                    <Route path='Profile' element={<Profile />} />
-                </Routes>
-            </main>
+                <main style={style.main_Cont}>
+                    {/* Main Content */}
+                    <Routes>
+                        <Route path='/' element={<Home />} />
+                        <Route path='Home' element={<Home />} />
+                        <Route path='Chat' element={<Chat />} />
+                        <Route path='Friends' element={<Friends />} />
+                        <Route path='Profile' element={<Profile />} />
+                    </Routes>
+                </main>
+            </AvatarProvider>
         </div>
     );
 }
