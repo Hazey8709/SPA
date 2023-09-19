@@ -9,10 +9,13 @@ import UserCard from "../components/userComp/UserCard";
 //
 
 const Friends = () => {
+    //* State
     const [userData, setUserData] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const [showWarning, setShowWarning] = useState(false);
 
+    //* useEffect Async Fetch
     useEffect(() => {
         async function fetchApi() {
             try {
@@ -24,6 +27,7 @@ const Friends = () => {
                 }
                 const data = await response.json();
                 const users = data.results;
+                // Log
                 console.log(users);
 
                 setUserData(users);
@@ -33,15 +37,40 @@ const Friends = () => {
                 setLoading(false);
             }
         }
+
+        // Set a timeout for 1 minutes (1000 milliseconds)
+        const timeoutId = setTimeout(() => {
+            setShowWarning(true);
+            setLoading(false);
+        }, 1 * 60 * 1000);
+
         fetchApi();
+
+        return () => {
+            // Clear the timeout if the component unmounts
+            clearTimeout(timeoutId);
+        };
     }, []);
 
-    if (loading) {
-        return <p>Loading...</p>;
-    }
-
+    //* Error Handling
     if (error) {
         return <p>Error: {error.message}</p>;
+    }
+
+    //* Warning Handler
+    if (showWarning) {
+        // Log
+        console.log("showWarning: ", showWarning);
+        return (
+            <p style={style.warningStyle}>
+                Loading took too long. Please try again later.
+            </p>
+        );
+    }
+
+    //* Loading Handling
+    if (loading) {
+        return <p style={style.loadingStyle}>Loading...</p>;
     }
 
     return (
@@ -82,7 +111,7 @@ const style = {
     friendsMain_Cont: {
         display: "block",
         // position: "absolute",
-        border: ".1rem solid red",
+        border: ".1rem solid white",
         // backgroundColor: "lightblue",
         width: "71rem",
         height: "50.3rem",
@@ -95,7 +124,7 @@ const style = {
         // position: "absolute",
         // border: ".1rem solid red",
         // backgroundColor: "lightblue",
-        width: "71rem",
+        width: "20rem",
         height: "3.2rem",
         margin: "0 auto",
         marginTop: "1.5rem",
@@ -114,5 +143,22 @@ const style = {
         margin: "0 auto",
         overFlow: "hidden",
         overflowY: "scroll",
+    },
+
+    loadingStyle: {
+        marginTop: "10rem",
+        marginLeft: "30rem",
+        fontSize: "3rem",
+        fontWeight: "bold",
+        color: "red",
+    },
+
+    warningStyle: {
+        // marginTop: "10rem",
+        // marginLeft: "20rem",
+        textAlign: "center",
+        fontSize: "3rem",
+        fontWeight: "bold",
+        color: "red",
     },
 };

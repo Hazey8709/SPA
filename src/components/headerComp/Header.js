@@ -2,22 +2,37 @@ import { Link } from "react-router-dom";
 import Links from "../linksComp/Links";
 //* Avatar
 import Avatar from "../../images/avatars/guyAvatar.jpg";
+
+//* Context Avatar
+import { useAvatar } from "../../context/AvatarContext";
 //
 //
 //
 
 const Header = () => {
+    const { avatarUrl, userName } = useAvatar();
+
+    const defaultAvatar = "Jane Doe";
+
+    const showAvatar = () => {
+        if (!userName || userName.trim() === "") {
+            return defaultAvatar;
+        } else {
+            return userName;
+        }
+    };
+
     return (
         <header style={style.header_Cont}>
             <Link to='Profile'>
                 <img
-                    src={Avatar}
+                    src={avatarUrl || Avatar}
                     alt='Avatar'
                     title='Avatar'
                     style={style.avatar}
                 />
                 <h2 title='User Name' style={style.avatarName}>
-                    Ray Zip
+                    {showAvatar()}
                 </h2>
             </Link>
             <section style={style.quickLinks}>
@@ -69,7 +84,7 @@ const style = {
         borderRadius: ".3rem",
         backgroundColor: "black",
         color: "#0005",
-        width: "10rem",
+        width: "15rem",
 
         marginTop: "2.7rem",
         textAlign: "center",
