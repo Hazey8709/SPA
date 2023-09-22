@@ -11,7 +11,10 @@ const Home = () => {
     return (
         <main style={style.homeMain_Cont}>
             <MessageInfo />
-            <Stocks />
+
+            <div>
+                <Stocks />
+            </div>
         </main>
     );
 };
