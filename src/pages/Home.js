@@ -1,5 +1,6 @@
 //* Imports
 import MessageInfo from "../components/homeComp/MessageInfo";
+import Stocks from "../components/homeComp/Stocks";
 
 //
 //
@@ -10,6 +11,7 @@ const Home = () => {
     return (
         <main style={style.homeMain_Cont}>
             <MessageInfo />
+            <Stocks />
         </main>
     );
 };
