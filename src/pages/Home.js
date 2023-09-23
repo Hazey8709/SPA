@@ -23,6 +23,7 @@ export default Home;
 
 const style = {
     homeMain_Cont: {
+        display: "flex",
         border: ".1rem solid red",
         width: "71rem",
         height: "50.3rem",

@@ -25,7 +25,7 @@ function App() {
                 <Ads />
 
                 <main style={style.main_Cont}>
-                    {/* Main Content */}
+                    {/*  Main Content */}
                     <Routes>
                         <Route path='/' element={<Home />} />
                         <Route path='Home' element={<Home />} />

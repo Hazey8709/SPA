@@ -25,7 +25,7 @@ const Profile = () => {
                 if (!response.ok) {
                     throw new Error("Network response was not ok");
                 }
-                
+
                 // Data
                 const data = await response.json();
                 const users = data.results;
@@ -51,7 +51,6 @@ const Profile = () => {
                 console.log(error);
             }
         };
-
 
         // No Data timeout for 1 minute (1000 milliseconds)
         if (userData.length === 0) {
