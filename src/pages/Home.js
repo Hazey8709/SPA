@@ -1,8 +1,7 @@
 //* Imports
 import MessageInfo from "../components/homeComp/MessageInfo";
-import Stocks from "../components/homeComp/Stocks";
+import F_I from "../components/homeComp/F_I";
 
-//
 //
 //
 //
@@ -12,8 +11,8 @@ const Home = () => {
         <main style={style.homeMain_Cont}>
             <MessageInfo />
 
-            <div>
-                <Stocks />
+            <div style={style.Cont}>
+                <F_I />
             </div>
         </main>
     );
@@ -28,5 +27,9 @@ const style = {
         width: "71rem",
         height: "50.3rem",
         marginLeft: ".1rem",
+    },
+
+    Cont: {
+        border: ".1rem solid purple",
     },
 };

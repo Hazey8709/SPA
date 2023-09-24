@@ -1,6 +1,9 @@
+//* Imports
 import React, { useState, useEffect } from "react";
 import ConversionCard from "../conversionComp/ConversionCard";
+import StockData from "./StockData";
 
+//*  API's
 //! StockData API
 //! https://api.stockdata.org/v1/news/all?
 //! https://api.stockdata.org/v1/data/intraday?
@@ -12,21 +15,18 @@ import ConversionCard from "../conversionComp/ConversionCard";
 //* acb34b5d19c4a4e2fab8b319
 //* https://v6.exchangerate-api.com/v6/acb34b5d19c4a4e2fab8b319/latest/USD
 
-//
-//
-//
-//
-
 //* URL for the API (ExchangeRate API)
 const URL =
     "https://v6.exchangerate-api.com/v6/acb34b5d19c4a4e2fab8b319/latest/USD";
 
-function Stocks() {
-    //* State
+//? Functional Component
+function F_I() {
+    //
+    //? State
     const [baseData, setBaseData] = useState([]);
     const [ratesData, setRatesData] = useState([]);
 
-    //* UseEffect Async Fetch
+    //? UseEffect Async Fetch
     useEffect(() => {
         const fetchData = async () => {
             try {
@@ -61,8 +61,10 @@ function Stocks() {
     console.log("Base-Data:", baseData);
     console.log("Rates-Data:", ratesData);
 
+    //? Return
     return (
         <section style={style.sect_Cont}>
+            <StockData />
             <ConversionCard
                 sectTitle='Conversion Rates'
                 baseCode={baseData}
@@ -102,12 +104,11 @@ function Stocks() {
     );
 }
 
-export default Stocks;
-
-
+export default F_I;
 
 const style = {
     sect_Cont: {
+        display: "flex",
         border: ".1rem solid yellow", // change back to black
         borderRadius: ".3rem",
         width: "35rem",
