@@ -60,7 +60,7 @@ const style = {
         border: ".1rem solid white",
         borderRadius: ".5rem",
         backgroundColor: "white",
-        width: "25rem",
+        width: "26rem",
         height: "25rem",
         marginLeft: "3.2rem",
         marginTop: "1.5rem",

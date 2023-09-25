@@ -17,7 +17,7 @@ const Friends = () => {
 
     //* useEffect Async Fetch
     useEffect(() => {
-        async function fetchApi() {
+        const fetchApi = async () => {
             try {
                 const response = await fetch(
                     "https://randomuser.me/api/1.4/?results=20"
@@ -25,8 +25,11 @@ const Friends = () => {
                 if (!response.ok) {
                     throw new Error("Network response was not ok");
                 }
+
+                // Data
                 const data = await response.json();
                 const users = data.results;
+
                 // Log
                 console.log(users);
 
@@ -36,21 +39,23 @@ const Friends = () => {
                 setError(error);
                 setLoading(false);
             }
-        }
-
-        // Set a timeout for 1 minutes (1000 milliseconds)
-        const timeoutId = setTimeout(() => {
-            setShowWarning(true);
-            setLoading(false);
-        }, 1 * 60 * 1000);
-
-        fetchApi();
-
-        return () => {
-            // Clear the timeout if the component unmounts
-            clearTimeout(timeoutId);
         };
-    }, []);
+
+        // No Data timeout for 1 minute (1000 milliseconds)
+        if (userData.length === 0) {
+            const timeoutId = setTimeout(() => {
+                setShowWarning(true);
+                setLoading(false);
+            }, 1 * 60 * 1000);
+
+            fetchApi();
+
+            return () => {
+                // Clear the timeout if the component unmounts
+                clearTimeout(timeoutId);
+            };
+        }
+    }, [userData]);
 
     //* Error Handling
     if (error) {
